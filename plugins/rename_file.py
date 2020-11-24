@@ -113,7 +113,7 @@ async def echo(bot, update):
                 m = await bot.get_messages(update.chat.id, mes.msg_id)
                 await m.download(file_name=thumb_image_path)
                 thumb_image_path = thumb_image_path
-            else:
+            elif:
                 thumb_image_path = None
             else:
                 width = 0
