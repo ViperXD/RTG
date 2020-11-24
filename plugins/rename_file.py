@@ -78,57 +78,57 @@ async def echo(bot, update):
                 )
             )
             return"""
-        description = Translation.CUSTOM_CAPTION_UL_FILE
-        download_location = Config.DOWNLOAD_LOCATION + "/"
-        a = await bot.send_message(
-            chat_id=update.chat.id,
-            text=Translation.DOWNLOAD_START,
-            reply_to_message_id=update.message_id
+    description = Translation.CUSTOM_CAPTION_UL_FILE
+    download_location = Config.DOWNLOAD_LOCATION + "/"
+    a = await bot.send_message(
+        chat_id=update.chat.id,
+        text=Translation.DOWNLOAD_START,
+        reply_to_message_id=update.message_id
+    )
+    c_time = time.time()
+    the_real_download_location = await bot.download_media(
+        message=update.reply_to_message,
+        file_name=download_location,
+        progress=progress_for_pyrogram,
+        progress_args=(
+            Translation.DOWNLOAD_START,
+            a,
+            c_time
         )
-        c_time = time.time()
-        the_real_download_location = await bot.download_media(
-            message=update.reply_to_message,
-            file_name=download_location,
-            progress=progress_for_pyrogram,
-            progress_args=(
-                Translation.DOWNLOAD_START,
-                a,
-                c_time
-            )
-        )
-        if the_real_download_location is not None:
-            try:
-                await bot.edit_message_text(
-                    text=Translation.SAVED_RECVD_DOC_FILE,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
-                )
-            except:
-                pass
-            if "IndianMovie" in the_real_download_location:
-                await bot.edit_message_text(
-                    text=Translation.RENAME_403_ERR,
-                    chat_id=update.chat.id,
-                    message_id=a.message_id
-                )
-                return
-            new_file_name = download_location + file_name
-            os.rename(the_real_download_location, new_file_name)
+    )
+    if the_real_download_location is not None:
+        try:
             await bot.edit_message_text(
-                text=Translation.UPLOAD_START,
+                text=Translation.SAVED_RECVD_DOC_FILE,
                 chat_id=update.chat.id,
                 message_id=a.message_id
-                )
-            logger.info(the_real_download_location)
-            thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
-            if not os.path.exists(thumb_image_path):
-                mes = await thumb(update.from_user.id)
-                if mes != None:
-                    m = await bot.get_messages(update.chat.id, mes.msg_id)
-                    await m.download(file_name=thumb_image_path)
-                    thumb_image_path = thumb_image_path
-                else:
-                    thumb_image_path = None
+            )
+        except:
+            pass
+        if "IndianMovie" in the_real_download_location:
+            await bot.edit_message_text(
+                text=Translation.RENAME_403_ERR,
+                chat_id=update.chat.id,
+                message_id=a.message_id
+            )
+            return
+        new_file_name = download_location + file_name
+        os.rename(the_real_download_location, new_file_name)
+        await bot.edit_message_text(
+            text=Translation.UPLOAD_START,
+            chat_id=update.chat.id,
+            message_id=a.message_id
+            )
+        logger.info(the_real_download_location)
+        thumb_image_path = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + ".jpg"
+        if not os.path.exists(thumb_image_path):
+            mes = await thumb(update.from_user.id)
+            if mes != None:
+                m = await bot.get_messages(update.chat.id, mes.msg_id)
+                await m.download(file_name=thumb_image_path)
+                thumb_image_path = thumb_image_path
+            else:
+                thumb_image_path = None
             else:
                 width = 0
                 height = 0
