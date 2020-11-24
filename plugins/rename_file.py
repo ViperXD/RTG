@@ -113,9 +113,8 @@ async def echo(bot, update):
                 m = await bot.get_messages(update.chat.id, mes.msg_id)
                 await m.download(file_name=thumb_image_path)
                 thumb_image_path = thumb_image_path
-            elif:
-                thumb_image_path = None
             else:
+                thumb_image_path = None
                 width = 0
                 height = 0
                 metadata = extractMetadata(createParser(thumb_image_path))
