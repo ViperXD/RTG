@@ -1,18 +1,21 @@
 class Translation(object):
     START_TEXT = """ A Simple File Renamer Bot With Permanent Thumbnail support!💯
+I can rename any file of size under 2 GB.
+<b>Send me any Telegram file and reply to that file with /rename NewName.extention</b>
 
-<b>Send me any Telegram file and reply to that file with /rename NewName.extn</b>"""
+Feel Free Ask Any Doubts In My Support Group
+Support Group : @SuprtTGOpenBotz & @InFoTelGroup"""
 
-    RENAME_403_ERR = "What Are You Doing? You are Banned"
+    RENAME_403_ERR = "You are Banned Bruhh🤣🤣"
     ABS_TEXT = "What Are You Trying To Do,Mate?"
-    UPGRADE_TEXT = "CONTACT @prgofficial"
+    UPGRADE_TEXT = "CONTACT @Psykid_The_Bot"
     DOWNLOAD_START = "Give Me Some Time Bruh!!(〒﹏〒)"
     UPLOAD_START = "Hurray... Completed Downloading(;ŏ﹏ŏ)"
     RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry WTF Do You Think! I'll Upload It?"
-    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me > ©  @prgofficial **"
+    AFTER_SUCCESSFUL_UPLOAD_MSG = "**Thank you for Using Me > © @Psykid_The_Bot **"
     AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS = "Downloaded in {} seconds.\nUploaded in {} seconds"
-    NOT_AUTH_USER_TEXT = "CONTACT @prgofficial"
-    NOT_AUTH_USER_TEXT_FILE_SIZE = "IF You Got This Message You Should Contact @prgofficial"
+    NOT_AUTH_USER_TEXT = "CONTACT @Psykid_The_Bot"
+    NOT_AUTH_USER_TEXT_FILE_SIZE = "IF You Got This Message You Should Contact @Psykid_The_Bot"
     SAVED_CUSTOM_THUMB_NAIL = "Thumbnail Saved ✅ This Is Permanent"
     DEL_ETED_CUSTOM_THUMB_NAIL = "Custom thumbnail cleared succesfully🤦"
     FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "Media cleared succesfully."
