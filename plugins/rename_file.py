@@ -59,14 +59,13 @@ async def echo(bot, update):
         except Exception:
             await update.reply_text("Something Wrong. Contact my Support Group")
             return
-"""async def rename_doc(bot, update):
     if update.from_user.id in Config.BANNED_USERS:
         await bot.delete_messages(
             chat_id=update.chat.id,
             message_ids=update.message_id,
             revoke=True
         )
-        return
+           return
    TRChatBase(update.from_user.id, update.text, "rename")
     if (" " in update.text) and (update.reply_to_message is not None):
         cmd, file_name = update.text.split(" ", 1)
@@ -77,7 +76,8 @@ async def echo(bot, update):
                     num=len(file_name)
                 )
             )
-            return"""
+            return
+
     description = Translation.CUSTOM_CAPTION_UL_FILE
     download_location = Config.DOWNLOAD_LOCATION + "/"
     a = await bot.send_message(
